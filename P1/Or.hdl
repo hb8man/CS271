@@ -11,5 +11,8 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    // Implementing a 2-input OR gate using NAND gates
+    Nand(a=a, b=a, out=nota);  // ¬a
+    Nand(a=b, b=b, out=notb);  // ¬b
+    Nand(a=nota, b=notb, out=out);  // (¬a) NAND (¬b)
 }

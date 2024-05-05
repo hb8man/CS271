@@ -11,5 +11,9 @@ CHIP Xor {
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    // Implementing a 2-input XOR gate using NAND gates
+    Nand(a=a, b=b, out=nand1);
+    Nand(a=a, b=nand1, out=and1);
+    Nand(a=b, b=nand1, out=and2);
+    Nand(a=and1, b=and2, out=out);
 }
